@@ -1,4 +1,4 @@
-# php-api-router
+# PHP Router
 PHP API Router
 
 ## Support
@@ -6,7 +6,12 @@ PHP API Router
 Supports:
 
 - GET
-...PUT
+- PUT
+- POST
+- DELETE
+- PATCH
+
+for custom values, use all.
 
 ## Use
 
@@ -30,4 +35,21 @@ Router::get('/endpoint',function() {
 Router::all('/endpoint',function() {
   // todo
 });
+```
+
+### Other Functions
+
+All code in the 'set' route executes before any other routes.  
+This is a good place for CORS policys and/or authorization 
+
+```php
+Router::set('/',function() {
+		// todo
+});
+```
+
+### Get routes
+
+```php
+$routes = Router::getInstance()->routes;
 ```
