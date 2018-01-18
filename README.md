@@ -39,8 +39,7 @@ Router::all('/endpoint',function() {
 
 ### Other Functions
 
-All code in the 'set' route executes before any other routes.  
-This is a good place for CORS policys and/or authorization 
+All code in the 'set' route executes before any other routes.  This is a good place for CORS policys and/or authorization 
 
 ```php
 Router::set('/',function() {
