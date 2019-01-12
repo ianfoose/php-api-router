@@ -42,25 +42,14 @@ class Router {
 	}
 
 	/**
-	* Runs before anything else
-	*
-	* @param string $n Route name
-	* @param function $f Route function
-	* @return void
-	*/
-	public static function set($n,$f) {
-		$f();
-	}
-
-	/**
 	* Adds a route for all methods
 	*
 	* @param string $n Route name
 	* @param function $f Route function
 	* @return void
 	*/
-	public static function all($n, $f) {
-		self::addRoute('ALL',$n,$f);
+	public static function all($n,$f,$v=false) {
+		self::addRoute('ALL',$n,$f,$v);
 	}
 
 	/**
@@ -70,8 +59,8 @@ class Router {
 	* @param function $f Route function
 	* @return void
 	*/
-	public static function get($n,$f) {
-		self::addRoute('GET',$n,$f);
+	public static function get($n,$f,$v=false) {
+		self::addRoute('GET',$n,$f,$v);
 	}
 	
 	/**
@@ -81,8 +70,8 @@ class Router {
 	* @param function $f Route function
 	* @return void
 	*/
-	public static function post($n,$f) {
-		self::addRoute('POST',$n,$f);
+	public static function post($n,$f,$v=false) {
+		self::addRoute('POST',$n,$f,$v);
 	}
 
 	/**
@@ -92,8 +81,8 @@ class Router {
 	* @param function $f Route function
 	* @return void
 	*/
-	public static function patch($n,$f) {
-		self::addRoute('PATCH',$n,$f);
+	public static function patch($n,$f,$v=false) {
+		self::addRoute('PATCH',$n,$f,$v);
 	}
 
 	/**
@@ -103,8 +92,8 @@ class Router {
 	* @param function $f Route function
 	* @return void
 	*/
-	public static function put($n,$f) {
-		self::addRoute('PUT',$n,$f);
+	public static function put($n,$f,$v=false) {
+		self::addRoute('PUT',$n,$f,$v);
 	}
 
 	/**
@@ -114,8 +103,8 @@ class Router {
 	* @param function $f Route function
 	* @return void
 	*/
-	public static function delete($n,$f) {
-		self::addRoute('DELETE',$n,$f);
+	public static function delete($n,$f,$v=false) {
+		self::addRoute('DELETE',$n,$f,$v);
 	}
 
 	/**
@@ -126,8 +115,8 @@ class Router {
 	* @param function $f Route function
 	* @return void
 	*/
-	private static function addRoute($m,$n,$f) {
-		self::getInstance()->routes[] = array($m,$n,$f);
+	private static function addRoute($m,$n,$f,$v=false) {
+		self::getInstance()->routes[] = array($m,$n,$f,$v);
 	}
 }
 ?>
