@@ -52,3 +52,13 @@ Router::set('/',function() {
 ```php
 $routes = Router::getInstance()->routes;
 ```
+
+### Route Parsing Example
+
+To process routes and run their functions, use a foreach loop, make sure you are accessing the singleton for the Router class or this will not work.
+
+```php
+foreach(Router::getInstance()->routes as $key => $value) {
+	echo $value['name'];
+}
+```
