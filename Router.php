@@ -137,13 +137,13 @@ class Router {
 	* @return void
 	*/
 	private static function addRoute($m,$n,$f,$v=false,$o=false) {	
-		$newRoute = array('method'=>$m,'name'=>$n,'function'=>$f,'verify'=>$v);
+		$newRoute = array('method'=>$m,'route'=>$n,'function'=>$f,'verify'=>$v);
 		
 		// route overriding
 		if($o == true) {
 			if($routes = self::getInstance()->routes) {
 				foreach($routes as $key => $route) {
-					if($route['name'] == $n) {
+					if($route['route'] == $n) {
 						$routes[$key] = $newRoute;
 						break;
 					} 	 
